@@ -1,18 +1,31 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section
       id="about"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900 relative overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto">
+      {/* Background Image with Opacity */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/assets/images/notegpt2.png"
+          alt="Background"
+          fill
+          className="object-cover opacity-10 dark:opacity-5"
+          priority
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-8 text-center">
           About Me
         </h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-4">
-              I&apos;m a passionate Web Developer from Dhaka, Bangladesh, with over 3
-              years of Front-End experience and 1+ year as a Full-Stack
+              I&apos;m a passionate Web Developer from Dhaka, Bangladesh, with
+              over 3 years of Front-End experience and 1+ year as a Full-Stack
               Developer. I hold a Bachelor&apos;s degree in CSE from Daffodil
               International University with a CGPA of 3.5/4.0.
             </p>
@@ -23,9 +36,9 @@ export default function About() {
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-300">
               I have strengthened my skills through real-world projects,
-              continuous learning, and community involvement. I&apos;m always eager
-              to learn new technologies, collaborate on exciting projects, and
-              contribute to impactful software solutions.
+              continuous learning, and community involvement. I&apos;m always
+              eager to learn new technologies, collaborate on exciting projects,
+              and contribute to impactful software solutions.
             </p>
           </div>
           <div className="bg-linear-to-br from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 p-8 rounded-2xl">

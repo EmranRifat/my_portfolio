@@ -30,11 +30,25 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Content on the top for mobile, left for desktop */}
+    <section id="home" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative">
+      {/* Background Image with Opacity */}
+      <div
+        className="absolute opacity-30 dark:opacity-20"
+        style={{
+          backgroundImage: "url(/assets/images/formal-black.png)",
+          backgroundSize: "contain",
+          backgroundPosition: "left center",
+          backgroundRepeat: "no-repeat",
+          top: "1rem",
+          bottom: "1rem",
+          left: 0,
+          right: 0,
+        }}
+      />
 
+      <div className="max-w-6xl mx-auto relative z-10  ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center pl-8">
+          {/* Content on the top for mobile, left for desktop */}
           <div className="text-center md:text-left order-2 md:order-1">
             <h1 className="text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
               <span className="text-2xl sm:text-3xl"> Hi, I&apos;m </span>
@@ -45,7 +59,7 @@ export default function Hero() {
             <p className="text-xl sm:text-3xl text-slate-600 dark:text-slate-300 mb-2">
               <span
                 ref={typedElement}
-                className="typing text-[#c21e56] dark:text-red-500 font-semibold"
+                className="typing text-[#aa1244] dark:text-red-500 font-semibold"
               ></span>
             </p>
             <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 mb-6 flex items-center justify-center md:justify-start gap-2">
