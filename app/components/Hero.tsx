@@ -36,12 +36,12 @@ export default function Hero() {
           {/* Content on the top for mobile, left for desktop */}
 
           <div className="text-center md:text-left order-2 md:order-1">
-            {/* <h1 className="text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+            <h1 className="text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
               <span className="text-2xl sm:text-3xl"> Hi, I&apos;m </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                 Emran Hasan Rifat
               </span>
-            </h1> */}
+            </h1>
             <p className="text-xl sm:text-3xl text-slate-600 dark:text-slate-300 mb-2">
               <span
                 ref={typedElement}
@@ -73,13 +73,13 @@ export default function Hero() {
           </div>
 
           {/* Download Resume Circle - Top on mobile, right on desktop */}
-          <div className="flex flex-col md:flex-row items-center md:items-center gap-2 order-1 md:order-2">
+          <div className="flex flex-col md:flex-row items-center md:items-center gap-2 order-1 md:order-2 md:pl-48">
             <a
               href="/resume.pdf"
               download
-              className="w-56 h-56 sm:w-80 sm:h-80 lg:w-96 lg:h-96 relative flex items-center justify-center cursor-pointer rounded-full transition-all hover:scale-110 hover:-translate-y-2 duration-300 group"
+              className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 relative flex items-center justify-center cursor-pointer rounded-full transition-all hover:scale-110 hover:-translate-y-2 duration-300 group"
             >
-              <div className="relative w-40 h-40 sm:w-56 sm:h-56">
+              <div className="relative w-36 h-36 sm:w-42 sm:h-42 lg:w-48 lg:h-48">
                 {/* Spinning Text */}
                 <svg
                   className="absolute inset-0 w-full h-full animate-spin group-hover:animate-none transition-all"
@@ -92,16 +92,16 @@ export default function Hero() {
                       d="M 112, 112 m -85, 0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0"
                     />
                   </defs>
-                  <text className="text-sm sm:text-base lg:text-xl font-semibold fill-white tracking-widest drop-shadow-lg">
+                  <text className="text-base sm:text-lg lg:text-xl font-semibold fill-white tracking-widest drop-shadow-lg">
                     <textPath href="#circlePath" startOffset="0%">
-                      ➡️ DOWNLOAD RESUME FROM HERE ➡️ DOWNLOAD RESUME FROM HERE
+                      ➡️ DOWNLOAD RESUME FROM HERE ➡️DOWNLOAD RESUME FROM HERE
                     </textPath>
                   </text>
                 </svg>
                 {/* Center Arrow Icon */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <svg
-                    className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-white animate-pulse group-hover:animate-bounce drop-shadow-xl"
+                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-white animate-pulse group-hover:animate-bounce drop-shadow-xl"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -118,13 +118,13 @@ export default function Hero() {
             </a>
 
             {/* Social Media Icons - Vertical on right side */}
-            <div className="flex md:flex-col gap-4 items-center justify-center">
+            <div className="flex md:flex-col gap-6 items-center justify-center">
               {/* LinkedIn */}
               <a
                 href="https://linkedin.com/in/yourprofile"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-lg ml-[-20px]"
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-[-20px]"
               >
                 <svg
                   className="w-6 h-6"
@@ -140,7 +140,7 @@ export default function Hero() {
                 href="https://github.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-lg ml-12"
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-12"
               >
                 <svg
                   className="w-6 h-6"
@@ -156,7 +156,7 @@ export default function Hero() {
                 href="https://facebook.com/yourprofile"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-lg ml-20"
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-20"
               >
                 <svg
                   className="w-6 h-6"
@@ -172,7 +172,7 @@ export default function Hero() {
                 href="https://instagram.com/yourprofile"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-lg ml-12"
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-12"
               >
                 <svg
                   className="w-6 h-6"
@@ -186,7 +186,7 @@ export default function Hero() {
               {/* Email */}
               <a
                 href="mailto:your.email@example.com"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-lg ml-[-20px]"
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-[-20px]"
               >
                 <svg
                   className="w-6 h-6"
