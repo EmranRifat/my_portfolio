@@ -12,11 +12,11 @@ export default function Hero() {
       const typed = new Typed(typedElement.current, {
         strings: [
           "Full Stack Web Developer",
-          "MERN Stack Developer",
-          "React & Next.js Developer",
           "Node.js & Go Developer",
           "Frontend Specialist",
+          "React & Next.js Developer",
           "Bug Fixer & Optimizer",
+          "MERN Stack Developer",
         ],
         typeSpeed: 100,
         backSpeed: 60,
