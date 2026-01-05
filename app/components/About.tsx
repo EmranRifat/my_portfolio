@@ -19,7 +19,7 @@ export default function About() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-8 text-center">
-          About <span className="text-blue-800 dark:text-blue-400">Me</span>
+          About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Me</span>
         </h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>

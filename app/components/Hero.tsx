@@ -73,13 +73,13 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a
                 href="#contact"
-                className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium"
+                className="relative overflow-visible px-12 py-3 shadow-sm bg-blue-600 after:content-[''] after:absolute after:rounded-full after:inset-0 after:bg-background/40 after:z-[-1] after:transition after:duration-700 hover:after:scale-150 hover:after:opacity-0 text-white rounded-full hover:bg-blue-700 transition font-medium"
               >
                 Get In Touch
               </a>
               <a
                 href="#projects"
-                className="px-8 py-3 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg hover:bg-slate-300 dark:hover:bg-slate-700 transition font-medium"
+                className="relative overflow-visible px-12 py-3 shadow-sm bg-slate-200 dark:bg-slate-800 after:content-[''] after:absolute after:rounded-full after:inset-0 after:bg-background/40 after:z-[-1] after:transition after:duration-700 hover:after:scale-150 hover:after:opacity-0 text-slate-900 dark:text-white rounded-full hover:bg-slate-300 dark:hover:bg-slate-700 transition font-medium"
               >
                 View Projects
               </a>
