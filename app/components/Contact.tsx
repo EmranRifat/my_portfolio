@@ -1,12 +1,14 @@
+import GetinTouch from "./GetinTouch";
+
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-slate-900"
     >
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-8">
-          Let&apos;s Work Together
+          Let&apos;s <span className=" text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> Work Together</span>
         </h2>
         <p className="text-xl text-slate-600 dark:text-slate-300 mb-12">
           I&apos;m always open to discussing new projects, creative ideas, or
@@ -19,10 +21,10 @@ export default function Contact() {
               Email
             </h3>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:emranrifat.dev@gmail.com"
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              your.email@example.com
+              emranrifat.dev@gmail.com
             </a>
           </div>
           <div>
@@ -31,10 +33,10 @@ export default function Contact() {
               LinkedIn
             </h3>
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/emran-rifat/"
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              linkedin.com/in/yourprofile
+              linkedin.com/in/emran-rifat
             </a>
           </div>
           <div>
@@ -43,20 +45,22 @@ export default function Contact() {
               GitHub
             </h3>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/EmranRifat"
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              github.com/yourusername
+              github.com/EmranRifat
             </a>
           </div>
         </div>
         <a
-          href="mailto:your.email@example.com"
+          href="mailto:emranrifat.dev@gmail.com"
           className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition font-medium text-lg"
         >
           Send Me an Email
         </a>
       </div>
+
+      {/* <GetinTouch/> */}
     </section>
   );
 }

@@ -89,7 +89,7 @@ export default function Hero() {
           {/* Download Resume Circle - Top on mobile, right on desktop */}
           <div className="flex flex-col md:flex-row items-center md:items-center gap-2 order-1 md:order-2 md:pl-48">
             <a
-              href="/resume.pdf"
+              href="/assets/Emran Hasan Rifat resume 2026.pdf"
               download
               className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 relative flex items-center justify-center cursor-pointer rounded-full transition-all hover:scale-110 hover:-translate-y-2 duration-300 group"
             >
@@ -106,7 +106,7 @@ export default function Hero() {
                       d="M 112, 112 m -85, 0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0"
                     />
                   </defs>
-                  <text className="text-base sm:text-lg lg:text-xl font-semibold fill-white tracking-widest drop-shadow-lg">
+                  <text className="text-base sm:text-lg lg:text-xl font-semibold dark:fill-white fill-black tracking-widest drop-shadow-lg">
                     <textPath href="#circlePath" startOffset="0%">
                       ➡️ DOWNLOAD RESUME FROM HERE ➡️DOWNLOAD RESUME FROM HERE
                     </textPath>
@@ -115,7 +115,7 @@ export default function Hero() {
                 {/* Center Arrow Icon */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <svg
-                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-white animate-pulse group-hover:animate-bounce drop-shadow-xl"
+                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 dark:text-white text-black animate-pulse group-hover:animate-bounce drop-shadow-xl"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -135,10 +135,10 @@ export default function Hero() {
             <div className="flex md:flex-col gap-6 items-center justify-center">
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com/in/yourprofile"
+                href="https://www.linkedin.com/in/emran-rifat/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-[-20px]"
+                className="w-12 h-12 flex items-center justify-center rounded-full border dark:border-white border-gray-700 dark:text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-[-20px]"
               >
                 <svg
                   className="w-6 h-6"
@@ -151,10 +151,10 @@ export default function Hero() {
 
               {/* GitHub */}
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/EmranRifat"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-12"
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gray-700 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-12"
               >
                 <svg
                   className="w-6 h-6"
@@ -167,10 +167,10 @@ export default function Hero() {
 
               {/* Facebook */}
               <a
-                href="https://facebook.com/yourprofile"
+                href="https://www.facebook.com/emranhasan.rifat.7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-20"
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gray-700 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-20"
               >
                 <svg
                   className="w-6 h-6"
@@ -183,10 +183,10 @@ export default function Hero() {
 
               {/* Instagram */}
               <a
-                href="https://instagram.com/yourprofile"
+                href="https://www.instagram.com/emran_hasan_rifat/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-12"
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gray-700 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-12"
               >
                 <svg
                   className="w-6 h-6"
@@ -199,8 +199,8 @@ export default function Hero() {
 
               {/* Email */}
               <a
-                href="mailto:your.email@example.com"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-[-20px]"
+                href="mailto:emranrifat.dev@gmail.com"
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gray-700 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-[-20px] cursor-pointer"
               >
                 <svg
                   className="w-6 h-6"

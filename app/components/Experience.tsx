@@ -47,7 +47,7 @@ export default function Experience() {
           {experiences.map((exp) => (
             <div
               key={exp.id}
-              className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg"
+              className="bg-gray-200 dark:bg-slate-800 p-6 rounded-xl shadow-lg"
             >
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>

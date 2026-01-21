@@ -14,7 +14,7 @@ export default function Navigation() {
 
   if (!mounted) {
     return (
-      <nav className="fixed top-0 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-sm z-50">
+      <nav className="fixed top-0 w-full bg-gray-200 dark:bg-slate-950/80 backdrop-blur-md shadow-sm z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="text-2xl font-bold text-slate-900 dark:text-white">

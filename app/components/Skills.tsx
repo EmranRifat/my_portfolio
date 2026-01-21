@@ -12,7 +12,7 @@ export default function Skills() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Languages */}
-          <div className="group bg-[#0E1629] shadow-lg shadow-[#7ba3bb] p-6 rounded-md hover:shadow-xl hover:shadow-[#7ba3bb] transition-all duration-300 border-2 border-slate-300 dark:border-slate-600 hover:border-blue-500 dark:hover:border-blue-400 hover:-translate-y-1">
+          <div className="group dark:bg-[#0E1629] bg-gray-200  shadow-lg shadow-[#7ba3bb] p-6 rounded-md hover:shadow-xl hover:shadow-[#7ba3bb] transition-all duration-300 border-2 border-slate-300 dark:border-slate-600 hover:border-blue-500 dark:hover:border-blue-400 hover:-translate-y-1">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-lg bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center">
                 <span className="text-xl font-bold text-blue-600 dark:text-blue-400">
@@ -40,7 +40,7 @@ export default function Skills() {
           </div>
 
           {/* Frontend */}
-          <div className="group bg-[#0E1629] shadow-lg shadow-[#7ba3bb] p-6 rounded-md hover:shadow-xl hover:shadow-[#7ba3bb] transition-all duration-300 border-2 border-slate-300 dark:border-slate-600 hover:border-purple-500 dark:hover:border-purple-400 hover:-translate-y-1">
+          <div className="group dark:bg-[#0E1629] bg-gray-200 shadow-lg shadow-[#7ba3bb] p-6 rounded-md hover:shadow-xl hover:shadow-[#7ba3bb] transition-all duration-300 border-2 border-slate-300 dark:border-slate-600 hover:border-purple-500 dark:hover:border-purple-400 hover:-translate-y-1">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-lg bg-purple-500/10 dark:bg-purple-500/20 flex items-center justify-center">
                 <span className="text-2xl font-bold text-purple-600 dark:text-purple-400">
@@ -79,7 +79,7 @@ export default function Skills() {
 
 
           {/* Backend & Database */}
-          <div className="group bg-[#0E1629] shadow-lg shadow-[#7ba3bb] p-6 rounded-md hover:shadow-xl hover:shadow-[#7ba3bb] transition-all duration-300 border-2 border-slate-300 dark:border-slate-600 hover:border-green-500 dark:hover:border-green-400 hover:-translate-y-1">
+          <div className="group dark:bg-[#0E1629] bg-gray-200 shadow-lg shadow-[#7ba3bb] p-6 rounded-md hover:shadow-xl hover:shadow-[#7ba3bb] transition-all duration-300 border-2 border-slate-300 dark:border-slate-600 hover:border-green-500 dark:hover:border-green-400 hover:-translate-y-1">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-lg bg-green-500/10 dark:bg-green-500/20 flex items-center justify-center">
                 <span className="text-2xl font-bold text-green-600 dark:text-green-400">
@@ -115,7 +115,7 @@ export default function Skills() {
           </div>
 
           {/* Tools & Deployment */}
-          <div className="group bg-[#0E1629] shadow-lg shadow-[#7ba3bb] p-6 rounded-md hover:shadow-xl hover:shadow-[#7ba3bb] transition-all duration-300 border-2 border-slate-300 dark:border-slate-600 hover:border-cyan-500 dark:hover:border-cyan-400 hover:-translate-y-1">
+          <div className="group dark:bg-[#0E1629] bg-gray-200  shadow-lg shadow-[#7ba3bb] p-6 rounded-md hover:shadow-xl hover:shadow-[#7ba3bb] transition-all duration-300 border-2 border-slate-300 dark:border-slate-600 hover:border-cyan-500 dark:hover:border-cyan-400 hover:-translate-y-1">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-lg bg-cyan-500/10 dark:bg-cyan-500/20 flex items-center justify-center">
                 <span className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">

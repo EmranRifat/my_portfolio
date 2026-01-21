@@ -1,7 +1,7 @@
 "use client";
 
 import { HeroUIProvider } from "@heroui/react";
-import { ThemeProvider } from "./app/components/ThemeProvider";
+import { ThemeProvider } from "./app/ThemeProvider";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (

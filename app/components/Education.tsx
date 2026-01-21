@@ -10,7 +10,7 @@ export default function Education() {
         </p>
         <div className="grid md:grid-cols-2 gap-8">
           {/* Education */}
-          <div className="bg-[#0E1629] shadow-lg shadow-[#7ba3bb] p-8 rounded-md border-2 border-slate-300 dark:border-slate-600 hover:shadow-xl hover:shadow-[#7ba3bb] hover:-translate-y-1 transition-all duration-300">
+          <div className="dark:bg-[#0E1629] bg-gray-200 shadow-lg shadow-[#7ba3bb] p-8 rounded-md border-2 border-slate-300 dark:border-slate-600 hover:shadow-xl hover:shadow-[#7ba3bb] hover:-translate-y-1 transition-all duration-300">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-lg bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center">
                 <span className="text-3xl">🎓</span>
@@ -57,7 +57,7 @@ export default function Education() {
           </div>
 
           {/* Certifications */}
-          <div className="bg-[#0E1629] shadow-lg shadow-[#7ba3bb] p-8 rounded-md border-2 border-slate-300 dark:border-slate-600 hover:shadow-xl hover:shadow-[#7ba3bb] hover:-translate-y-1 transition-all duration-300">
+          <div className="dark:bg-[#0E1629] bg-gray-200  shadow-lg shadow-[#7ba3bb] p-8 rounded-md border-2 border-slate-300 dark:border-slate-600 hover:shadow-xl hover:shadow-[#7ba3bb] hover:-translate-y-1 transition-all duration-300">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-lg bg-purple-500/10 dark:bg-purple-500/20 flex items-center justify-center">
                 <span className="text-3xl">🏆</span>

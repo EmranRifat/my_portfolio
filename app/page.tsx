@@ -10,6 +10,7 @@ import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import GetinTouch from "./components/GetinTouch";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Projects />
       <Experience />
       <Contact />
+      <GetinTouch />
       <Footer />
     </main>
   );
