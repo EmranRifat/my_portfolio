@@ -30,7 +30,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative">
+    <section
+      id="home"
+      className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative bg-gray-200 dark:bg-black overflow-hidden"
+    >
       {/* Background Image with Opacity */}
       <div
         className="absolute opacity-30 dark:opacity-20"
@@ -73,7 +76,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a
                 href="#contact"
-                className="relative overflow-visible px-12 py-3 shadow-sm bg-blue-600 after:content-[''] after:absolute after:rounded-full after:inset-0 after:bg-background/40 after:z-[-1] after:transition after:duration-700 hover:after:scale-150 hover:after:opacity-0 text-white rounded-full hover:bg-blue-700 transition font-medium"
+                className="relative overflow-visible px-12 py-3 shadow-sm bg-gradient-to-r from-blue-600 to-purple-600 after:content-[''] after:absolute after:rounded-full after:inset-0 after:bg-background/40 after:z-[-1] after:transition after:duration-700 hover:after:scale-150 hover:after:opacity-0 text-white rounded-full hover:from-blue-700 hover:to-purple-700 transition font-medium"
               >
                 Get In Touch
               </a>
@@ -138,7 +141,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/emran-rifat/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border dark:border-white border-gray-700 dark:text-white hover:bg-white hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-[-20px]"
+                className="w-12 h-12 flex items-center justify-center rounded-full border dark:border-white border-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(59,130,246,0.5)] md:ml-[-20px]"
               >
                 <svg
                   className="w-6 h-6"
@@ -154,7 +157,7 @@ export default function Hero() {
                 href="https://github.com/EmranRifat"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gray-700 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-12"
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-gray-700 hover:to-gray-900 dark:hover:from-white dark:hover:to-gray-100 hover:text-white dark:hover:text-slate-900 hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(75,85,99,0.5)] md:ml-12"
               >
                 <svg
                   className="w-6 h-6"
@@ -170,7 +173,7 @@ export default function Hero() {
                 href="https://www.facebook.com/emranhasan.rifat.7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gray-700 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-20"
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(59,130,246,0.5)] md:ml-20"
               >
                 <svg
                   className="w-6 h-6"
@@ -186,7 +189,7 @@ export default function Hero() {
                 href="https://www.instagram.com/emran_hasan_rifat/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gray-700 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-12"
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(219,39,119,0.5)] md:ml-12"
               >
                 <svg
                   className="w-6 h-6"
@@ -200,7 +203,7 @@ export default function Hero() {
               {/* Email */}
               <a
                 href="mailto:emranrifat.dev@gmail.com"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gray-700 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 transition-all hover:scale-110 shadow-[0_8px_20px_rgba(255,255,255,0.3)] md:ml-[-20px] cursor-pointer"
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(147,51,234,0.5)] md:ml-[-20px] cursor-pointer"
               >
                 <svg
                   className="w-6 h-6"

@@ -7,6 +7,9 @@ import { Button } from "@heroui/react";
 
 export default function Projects() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("list");
+  const [showAll, setShowAll] = useState(false);
+
+  const displayedProjects = showAll ? projects : projects.slice(0, 3);
 
   const getTagColorClasses = (color: string) => {
     const colorMap: Record<string, string> = {
@@ -44,12 +47,14 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-200 dark:bg-slate-900"
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-12">
           <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-0">
-            Featured Projects
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+              Featured Projects
+            </span>
           </h2>
           <div className="flex gap-2 bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
             <button
@@ -101,7 +106,7 @@ export default function Projects() {
 
         {viewMode === "grid" ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {displayedProjects.map((project) => (
               <div
                 key={project.id}
                 className="bg-slate-50 dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
@@ -158,7 +163,7 @@ export default function Projects() {
           </div>
         ) : (
           <div className="space-y-4">
-            {projects.map((project) => (
+            {displayedProjects.map((project) => (
               <div
                 key={project.id}
                 className="bg-slate-50 dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-2xl transition p-6 flex flex-col md:flex-row gap-6"
@@ -204,6 +209,17 @@ export default function Projects() {
                 </div>
               </div>
             ))}
+          </div>
+        )}
+
+        {projects.length > 3 && (
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              {showAll ? "Show Less" : "View All Projects"}
+            </button>
           </div>
         )}
       </div>

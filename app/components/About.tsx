@@ -19,7 +19,10 @@ export default function About() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-8 text-center">
-          About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Me</span>
+          About{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+            Me
+          </span>
         </h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -71,11 +74,29 @@ export default function About() {
                 <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
                   March 2024 - Currently Working
                 </p>
+                <div className="flex flex-wrap gap-1.5 mb-2">
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-0.5 rounded">
+                    React.js
+                  </span>
+                  <span className="bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs px-2 py-0.5 rounded">
+                    Next.js
+                  </span>
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-0.5 rounded">
+                    TypeScript
+                  </span>
+                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-0.5 rounded">
+                    Django
+                  </span>
+                  <span className="bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 text-xs px-2 py-0.5 rounded">
+                    Go(Fiber)
+                  </span>
+                </div>
                 <p className="text-sm text-slate-700 dark:text-slate-300">
-                  Working as Front-end Team Lead • Maintaining BPO (Bangladesh
-                  Post Office) API integration across multiple projects •
-                  Developing SSO platform • Creating & maintaining Admin panels
-                  • Implementing Docker containerization • Bug fixing and
+                  Serving as Senior Front-End Developer with comprehensive
+                  backend development support • Maintaining BPO (Bangladesh Post
+                  Office) API integration across multiple projects • Developing
+                  SSO platform • Creating & maintaining Admin panels •
+                  Implementing Docker containerization • Bug fixing and
                   performance optimization • Leading front-end development
                   initiatives and mentoring team members.
                 </p>
@@ -115,9 +136,13 @@ export default function About() {
                   April 2022 - October 2022
                 </p>
                 <p className="text-sm text-slate-700 dark:text-slate-300">
-                  Design & develop web project • Manage the backend • Data base
-                  management • Debugging errors • Hosting live server • Client
-                  communication.
+                  Designed and developed full-stack web applications using MERN
+                  stack (MongoDB, Express.js, React.js, Node.js) • Managed
+                  backend architecture and RESTful API development • Implemented
+                  database design and management with MongoDB • Performed
+                  debugging and error resolution • Deployed and maintained
+                  applications on live servers • Collaborated with clients to
+                  gather requirements and deliver solutions.
                 </p>
               </div>
             </div>
