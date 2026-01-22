@@ -64,7 +64,7 @@ export default function About() {
                       <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                     </span>
                   </div>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs font-semibold px-2.5 py-1 rounded-full">
+                  <span className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs font-semibold px-1.5 py-1 rounded-full">
                     Active
                   </span>
                 </div>
@@ -75,19 +75,22 @@ export default function About() {
                   March 2024 - Currently Working
                 </p>
                 <div className="flex flex-wrap gap-1.5 mb-2">
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-0.5 rounded">
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-1 py-0.5 rounded">
                     React.js
                   </span>
-                  <span className="bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs px-2 py-0.5 rounded">
+                  <span className="bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs px-1 py-0.5 rounded">
                     Next.js
                   </span>
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-0.5 rounded">
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-1 py-0.5 rounded">
                     TypeScript
                   </span>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-0.5 rounded">
+                  <span className="bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs px-1 py-0.5 rounded">
+                    REST API
+                  </span>
+                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-1 py-0.5 rounded">
                     Django
                   </span>
-                  <span className="bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 text-xs px-2 py-0.5 rounded">
+                  <span className="bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 text-xs px-1 py-0.5 rounded">
                     Go(Fiber)
                   </span>
                 </div>
