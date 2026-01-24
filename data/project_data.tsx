@@ -1,3 +1,5 @@
+import { number } from "framer-motion";
+
 export interface Project {
   id: number;
   title: string;
@@ -13,6 +15,10 @@ export interface Project {
     | "orange"
     | "cyan"
     | "yellow";
+  credentials?:{
+    number:string;
+    password:string;
+  }
   liveDemo: string;
   github: string;
 }
@@ -51,6 +57,10 @@ export const projects: Project[] = [
     tagColor: "green",
     liveDemo: "https://emts.ekdak.com/",
     github: "https://github.com/EmranRifat/emts-Frontend--latest.git",
+    credentials:{
+      number:"01534969863",
+      password:"anik2645"
+    }
     
   },
   {

@@ -8,8 +8,18 @@ import { Button } from "@heroui/react";
 export default function Projects() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("list");
   const [showAll, setShowAll] = useState(false);
+  const [visibleCredentials, setVisibleCredentials] = useState<
+    Record<number, boolean>
+  >({});
 
   const displayedProjects = showAll ? projects : projects.slice(0, 3);
+
+  const toggleCredentials = (projectId: number) => {
+    setVisibleCredentials((prev) => ({
+      ...prev,
+      [projectId]: !prev[projectId],
+    }));
+  };
 
   const getTagColorClasses = (color: string) => {
     const colorMap: Record<string, string> = {
@@ -135,6 +145,25 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+
+                  {project.credentials && (
+                    <div className="mb-4 p-2 bg-slate-200 dark:bg-slate-700 rounded text-xs">
+                      <button
+                        onClick={() => toggleCredentials(project.id)}
+                        className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition font-medium"
+                      >
+                        {visibleCredentials[project.id]
+                          ? "🔒 Hide Credentials"
+                          : "🔓 Show Credentials"}
+                      </button>
+                      {visibleCredentials[project.id] && (
+                        <div className="mt-2 text-slate-600 dark:text-slate-400">
+                          <p>{project.credentials.number}</p>
+                          <p>{project.credentials.password}</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
                   <div className="flex gap-4">
                     <a
                       href={project.liveDemo}
@@ -192,6 +221,24 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+                  {project.credentials && (
+                    <div className="mb-4 p-2 bg-slate-200 dark:bg-slate-700 rounded text-xs">
+                      <button
+                        onClick={() => toggleCredentials(project.id)}
+                        className="text-slate-700 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400 transition font-medium"
+                      >
+                        {visibleCredentials[project.id]
+                          ? "🔒 Hide Credentials"
+                          : "🔓 Show Credentials"}
+                      </button>
+                      {visibleCredentials[project.id] && (
+                        <div className="mt-2 text-slate-600 dark:text-slate-400">
+                          <p>{project.credentials.number}</p>
+                          <p>{project.credentials.password}</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
                   <div className="flex gap-4">
                     <a
                       href={project.liveDemo}
