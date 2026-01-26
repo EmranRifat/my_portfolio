@@ -119,7 +119,7 @@ export default function Projects() {
             {displayedProjects.map((project) => (
               <div
                 key={project.id}
-                className="bg-slate-50 dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+                className="bg-slate-50 dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border-2 border-transparent hover:border-blue-500 dark:hover:border-purple-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] dark:hover:shadow-[0_0_30px_rgba(168,85,247,0.5)]"
               >
                 <div className="h-48 overflow-hidden bg-slate-200 dark:bg-slate-700">
                   <img
@@ -195,7 +195,7 @@ export default function Projects() {
             {displayedProjects.map((project) => (
               <div
                 key={project.id}
-                className="bg-slate-50 dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-2xl transition p-6 flex flex-col md:flex-row gap-6"
+                className="bg-slate-50 dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col md:flex-row gap-6 transform hover:-translate-y-1 hover:scale-[1.02] border-2 border-transparent hover:border-blue-500 dark:hover:border-purple-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] dark:hover:shadow-[0_0_30px_rgba(168,85,247,0.5)]"
               >
                 <div className="w-full md:w-48 h-32 md:h-auto shrink-0 rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-700">
                   <img

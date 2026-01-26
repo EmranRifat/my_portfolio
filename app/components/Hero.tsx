@@ -18,8 +18,8 @@ export default function Hero() {
           "Bug Fixer & Optimizer",
           "MERN Stack Developer",
         ],
-        typeSpeed: 100,
-        backSpeed: 60,
+        typeSpeed: 50,
+        backSpeed: 30,
         loop: true,
       });
 
@@ -53,6 +53,11 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center pl-8">
           {/* Content on the top for mobile, left for desktop */}
           <div className="text-center md:text-left order-2 md:order-1">
+            <div className="mb-4">
+              <span className="font-mono text-sm md:text-base text-blue-600 dark:text-blue-400">
+                &lt;Hello World /&gt;
+              </span>
+            </div>
             <h1 className="text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
               <span className="text-2xl sm:text-3xl"> Hi, I&apos;m </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">

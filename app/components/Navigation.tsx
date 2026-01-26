@@ -36,8 +36,13 @@ export default function Navigation() {
       <nav className="fixed top-0 w-full bg-gray-200 dark:bg-slate-950/80 backdrop-blur-md shadow-sm z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="text-2xl font-bold text-slate-900 dark:text-white">
-              Portfolio
+            <div>
+              <a
+                href="#home"
+                className="font-mono text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
+              >
+                &lt; RIFAT /&gt;
+              </a>
             </div>
             <div className="hidden md:flex space-x-8 items-center">
               <a
@@ -134,8 +139,13 @@ export default function Navigation() {
             </button>
           </div>
 
-          <div className="text-2xl font-bold text-slate-900 dark:text-white md:flex-none">
-            Portfolio
+          <div className="md:flex-none">
+            <a
+              href="#home"
+              className="font-mono text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
+            >
+              &lt; RIFAT /&gt;
+            </a>
           </div>
 
           {/* Mobile right side buttons */}
