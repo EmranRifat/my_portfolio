@@ -15,17 +15,42 @@ export interface Project {
     | "orange"
     | "cyan"
     | "yellow";
-  credentials?:{
-    number:string;
-    password:string;
-  }
+  credentials?: {
+    number: string;
+    password: string;
+  };
   liveDemo: string;
-  github: string;
+  github: {
+    client: string;
+    server?: string;
+  };
 }
 
 export const projects: Project[] = [
   {
     id: 1,
+    title: "Homely Stay - Property Booking Platform",
+    description:
+      "A full-stack Airbnb-style property booking platform where users can discover, book, and manage accommodations. Features include JWT authentication, role-based access control (Admin, Host, User), property management, booking system, reviews, responsive UI, and a Go Fiber REST API with PostgreSQL.",
+    image: "/assets/projects/homely.png",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Go Fiber",
+      "PostgreSQL",
+      "JWT",
+    ],
+    tagColor: "blue",
+    liveDemo: "https://homely-stay-frontend.vercel.app/",
+    github: {
+      client: "https://github.com/EmranRifat/Homely-Stay-Frontend",
+      server: "https://github.com/EmranRifat/Go-fiber-api",
+    },
+  },
+
+  {
+    id: 2,
     title: "E-Commerce Platform",
     description:
       "A full-featured e-commerce platform with secure payment integration, product management, and an admin dashboard.",
@@ -35,33 +60,21 @@ export const projects: Project[] = [
     liveDemo: "https://mern-ecommerce-23.vercel.app/",
     github: "https://github.com/EmranRifat/next-ecommerce",
   },
-  {
-    id: 2,
-    title: "Delivery Management App",
-    description:
-      "A comprehensive delivery management system for local and international shipments with weight-based cost calculation, order tracking, and automated parcel management.",
-    image: "/assets/projects/Screenshot_2.png",
-    tags: ["Next.js", "TypeScript", "Django","PostgreSQL"],
-    tagColor: "purple",
-    liveDemo: "https://booking.bpodms.gov.bd/",
-    github: "https://github.com/EmranRifat/Booking-bpodms-Frontend.git",
-  },
+
   {
     id: 3,
     title: "EMTS Dashboard - Express Money Transfer System",
     description:
       "A comprehensive admin panel for managing express money transfers with real-time transaction monitoring, revenue flow analytics, post office management, and detailed transaction reporting with sender/receiver tracking.",
-    image:
-      "/assets/projects/emts-ekdak.png",
+    image: "/assets/projects/emts-ekdak.png",
     tags: ["Next.js", "TypeScript", "Django", " PostgreSQL"],
     tagColor: "green",
     liveDemo: "https://emts.ekdak.com/",
     github: "https://github.com/EmranRifat/emts-Frontend--latest.git",
-    credentials:{
-      number:"01534969863",
-      password:"anik2645"
-    }
-    
+    credentials: {
+      number: "01534969863",
+      password: "anik2645",
+    },
   },
   {
     id: 4,

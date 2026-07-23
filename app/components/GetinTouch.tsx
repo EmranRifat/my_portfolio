@@ -160,7 +160,8 @@ const GetinTouch = () => {
                     href="tel:+8801686067203"
                     className="text-slate-600 dark:text-slate-300 text-sm hover:text-blue-600 dark:hover:text-cyan-400 transition"
                   >
-                    +880 1686 067203
+                    <span className="block">+88 01738435502</span>
+                    <span className="block">+88 01410425191</span>
                   </a>
                 </div>
               </div>
