@@ -94,24 +94,28 @@ export default function Skills() {
             </div>
             <ul className="space-y-2 text-slate-600 dark:text-slate-300">
               <li className="flex items-center gap-2 hover:text-green-600 dark:hover:text-green-400 transition-colors">
-                <span className="text-green-500">▸</span> NodeJS | ExpressJS |
-                Fiber (Go)
+                <span className="text-green-500">▸</span> Node.js | Express.js |
+                Fiber (Go) | Django
               </li>
+
               <li className="flex items-center gap-2 hover:text-green-600 dark:hover:text-green-400 transition-colors">
                 <span className="text-green-500">▸</span> REST API | WebSocket |
                 Socket.IO
               </li>
+
               <li className="flex items-center gap-2 hover:text-green-600 dark:hover:text-green-400 transition-colors">
                 <span className="text-green-500">▸</span> JWT Authentication |
                 OAuth 2.0
               </li>
 
               <li className="flex items-center gap-2 hover:text-green-600 dark:hover:text-green-400 transition-colors">
-                <span className="text-green-500">▸</span> MySQL | PostgreSQL |
+                <span className="text-green-500">▸</span> PostgreSQL | MySQL |
                 MongoDB
               </li>
+
               <li className="flex items-center gap-2 hover:text-green-600 dark:hover:text-green-400 transition-colors">
-                <span className="text-green-500">▸</span> Mongoose ORM | GORM
+                <span className="text-green-500">▸</span> GORM | Mongoose ORM |
+                Django ORM
               </li>
             </ul>
           </div>

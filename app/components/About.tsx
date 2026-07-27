@@ -18,33 +18,37 @@ export default function About() {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-8 text-center">
-          About{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-            Me
-          </span>
-        </h2>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-lg text-slate-600 dark:text-slate-300 mb-4">
-              I&apos;m a Web Developer from Dhaka, Bangladesh, with 3+ years of
-              Front-End experience and over 1 year as a Full-Stack Developer. I
-              completed my Bachelor&apos;s in CSE from Daffodil International
-              University with a CGPA of 3.5/4.0.
-            </p>
-            <p className="text-lg text-slate-600 dark:text-slate-300 mb-4">
-              I focus on building responsive, scalable, and user-friendly web
-              applications. I enjoy turning ideas into clean and efficient
-              solutions, writing maintainable code, and continuously improving
-              my skills through real-world projects and learning.
-            </p>
-            <p className="text-lg text-slate-600 dark:text-slate-300">
-              I value honesty, teamwork, and personal growth. Whether working
-              independently or in a team, I approach every project with
-              dedication and a strong problem-solving mindset, aiming to deliver
-              meaningful and impactful software.
-            </p>
-          </div>
+  <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+    About{" "}
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+      Me
+    </span>
+  </h2>
+
+  <div className="grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p className="text-lg text-slate-600 dark:text-slate-300 mb-4">
+        I&apos;m a Software Engineer and Full Stack Developer from Dhaka,
+        Bangladesh, with 3+ years of experience building modern web applications.
+        I specialize in developing scalable frontend and backend solutions using
+        Next.js, TypeScript, Go Fiber, Django, and PostgreSQL.
+      </p>
+
+      <p className="text-lg text-slate-600 dark:text-slate-300 mb-4">
+        I have built and deployed multiple production-ready full-stack
+        applications, designed secure JWT authentication and role-based access
+        control (RBAC) systems, and developed scalable REST APIs with optimized
+        database architectures.
+      </p>
+
+      <p className="text-lg text-slate-600 dark:text-slate-300">
+        My experience includes delivering enterprise software solutions such as
+        the Bangladesh Post Office Booking Management System. I also leverage
+        AI-assisted development tools to improve productivity, enhance code
+        quality, and streamline software delivery while continuously improving
+        my technical skills.
+      </p>
+    </div>
 
           <div className="bg-linear-to-br from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 p-8 rounded-2xl">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
@@ -68,41 +72,45 @@ export default function About() {
                     Active
                   </span>
                 </div>
-                <p className="text-lg font-medium text-slate-800 dark:text-slate-200">
-                  Full Stack Developer
-                </p>
-                <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
-                  March 2024 - Currently Working
-                </p>
-                <div className="flex flex-wrap gap-1.5 mb-2">
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-1 py-0.5 rounded">
-                    React.js
-                  </span>
-                  <span className="bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs px-1 py-0.5 rounded">
-                    Next.js
-                  </span>
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-1 py-0.5 rounded">
-                    TypeScript
-                  </span>
-                  <span className="bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs px-1 py-0.5 rounded">
-                    REST API
-                  </span>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-1 py-0.5 rounded">
-                    Django
-                  </span>
-                  <span className="bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 text-xs px-1 py-0.5 rounded">
-                    Go(Fiber)
-                  </span>
-                </div>
-                <p className="text-sm text-slate-700 dark:text-slate-300">
-                  Serving as Senior Front-End Developer with comprehensive
-                  backend development support • Maintaining BPO (Bangladesh Post
-                  Office) API integration across multiple projects • Developing
-                  SSO platform • Creating & maintaining Admin panels •
-                  Implementing Docker containerization • Bug fixing and
-                  performance optimization • Leading front-end development
-                  initiatives and mentoring team members.
-                </p>
+              <p className="text-lg font-medium text-slate-800 dark:text-slate-200">
+  Software Engineer
+</p>
+
+<p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
+   March 2024 - Present
+</p>
+
+<div className="flex flex-wrap gap-1.5 mb-2">
+  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-1 py-0.5 rounded">
+    Next.js
+  </span>
+  <span className="bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs px-1 py-0.5 rounded">
+    TypeScript
+  </span>
+  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-1 py-0.5 rounded">
+    Go (Fiber)
+  </span>
+  <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-1 py-0.5 rounded">
+    Django
+  </span>
+  <span className="bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 text-xs px-1 py-0.5 rounded">
+    PostgreSQL
+  </span>
+  <span className="bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs px-1 py-0.5 rounded">
+    Docker
+  </span>
+</div>
+
+<p className="text-sm text-slate-700 dark:text-slate-300">
+  Developed and maintained scalable enterprise web applications using Next.js,
+  Go Fiber, Django, and PostgreSQL • Designed secure JWT-based authentication
+  and role-based access control (RBAC) systems • Built RESTful APIs and
+  optimized database queries to improve application performance and
+  maintainability • Delivered enterprise solutions including a Booking
+  Management System for Bangladesh Post Office • Collaborated with
+  cross-functional teams in Agile environments to build and deploy
+  production-ready software solutions.
+</p>
               </div>
 
               {/* Achieve It Ltd */}

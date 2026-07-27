@@ -11,12 +11,13 @@ export default function Hero() {
     if (typedElement.current) {
       const typed = new Typed(typedElement.current, {
         strings: [
-          "Full Stack Web Developer",
-          "Node.js & Go Developer",
-          "Frontend Specialist",
-          "React & Next.js Developer",
-          "Bug Fixer & Optimizer",
-          "MERN Stack Developer",
+          "Full Stack Developer",
+          "Software Engineer",
+          "React.js & Next.js Specialist",
+          "Go (Fiber) Backend Developer",
+          "Scalable Web Application Developer",
+          "SaaS Platform Engineer",
+          "Modern Web Solution Builder",
         ],
         typeSpeed: 50,
         backSpeed: 30,
@@ -32,53 +33,87 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative bg-gray-200 dark:bg-black overflow-hidden"
+      className="
+    pt-32 pb-20 px-4 sm:px-6 lg:px-8 
+    relative overflow-hidden
+    bg-gradient-to-br 
+    from-slate-100 
+    via-white 
+    to-slate-200
+    dark:from-black
+    dark:via-black
+    dark:to-slate-900
+    transition-colors
+    duration-500
+  "
     >
       {/* Background Image with Opacity */}
       <div
-        className="absolute opacity-30 dark:opacity-20"
+        className=" absolute inset-0 bg-no-repeat bg-contain bg-left opacity-20 dark:opacity-1 transition-opacity duration-500 "
         style={{
-          backgroundImage: "url(/assets/images/formal-black.png)",
-          backgroundSize: "contain",
-          backgroundPosition: "left center",
-          backgroundRepeat: "no-repeat",
-          top: "1rem",
-          bottom: "1rem",
-          left: 0,
-          right: 0,
+          backgroundImage: "url('/assets/images/formal-black.png')",
         }}
       />
 
-      <div className="max-w-6xl mx-auto relative z-10  ">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center pl-8">
+      <div className="max-w-8xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-24 items-center justify-center">
+          {" "}
           {/* Content on the top for mobile, left for desktop */}
-          <div className="text-center md:text-left order-2 md:order-1">
-            <div className="mb-4">
-              <span className="font-mono text-sm md:text-base text-blue-600 dark:text-blue-400">
-                &lt;Hello World /&gt;
-              </span>
-            </div>
-            <h1 className="text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-              <span className="text-2xl sm:text-3xl"> Hi, I&apos;m </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                Emran Hasan Rifat
-              </span>
-            </h1>
-            <p className="text-xl sm:text-3xl text-slate-600 dark:text-slate-300 mb-2">
-              <span
-                ref={typedElement}
-                className="typing text-[#aa1244] dark:text-red-500 font-semibold"
-              ></span>
-            </p>
-            <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 mb-6 flex items-center justify-center md:justify-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">📍</span>{" "}
-              Dhaka, Bangladesh
-            </p>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-8">
-              I specialize in designing, developing, and maintaining modern web
-              applications using both frontend and backend technologies.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+          <div className="relative md:translate-x-48 lg:translate-x-72">
+            {" "}
+            <div className="text-center md:text-left order-2 md:order-1 flex flex-col justify-center items-center md:items-start">
+              <div className="mb-4">
+                <span className="font-mono text-sm md:text-base text-blue-600 dark:text-blue-400">
+                  &lt;Hello World /&gt;
+                </span>
+              </div>
+              <h1 className="text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+                <span className="text-2xl sm:text-3xl"> Hi, I&apos;m </span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                  Emran Hasan Rifat
+                </span>
+              </h1>
+              <p className="text-lg sm:text-2xl text-slate-600 dark:text-slate-300 mb-2">
+                <span
+                  ref={typedElement}
+                  className="typing text-[#aa1244] dark:text-red-500 font-semibold"
+                ></span>
+              </p>
+              <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 mb-4 flex items-center justify-center md:justify-start gap-2">
+                <span className="text-blue-600 dark:text-blue-400 text-sm">
+                  📍
+                </span>{" "}
+                Dhaka, Bangladesh
+              </p>
+              <p className="mt-2 w-full max-w-4xl text-base sm:text-lg leading-7 sm:leading-8 text-slate-600 dark:text-slate-300">
+                I specialize in designing, developing, and maintaining scalable
+                web applications using{" "}
+                <span className="font-semibold text-blue-600 dark:text-blue-400">
+                  modern frontend and backend technologies
+                </span>{" "}
+                with AI-assisted workflows to build efficient, high-quality
+                software.
+              </p>
+              {/* Tech Stack */}
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-2 max-w-xs sm:max-w-none mx-auto md:mx-0">
+                {[
+                  "React",
+                  "Next.js",
+                  "TypeScript",
+                  "Go",
+                  "Node.js",
+                  "Django",
+                  "PostgreSQL",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="whitespace-nowrap px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs font-medium hover:bg-blue-600 hover:text-white transition"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              {/* <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a
                 href="#contact"
                 className="relative overflow-visible px-12 py-3 shadow-sm bg-gradient-to-r from-blue-600 to-purple-600 after:content-[''] after:absolute after:rounded-full after:inset-0 after:bg-background/40 after:z-[-1] after:transition after:duration-700 hover:after:scale-150 hover:after:opacity-0 text-white rounded-full hover:from-blue-700 hover:to-purple-700 transition font-medium"
@@ -91,15 +126,32 @@ export default function Hero() {
               >
                 View Projects
               </a>
+            </div> */}
+              {/* Buttons */}
+              <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-6">
+                <a
+                  href="#contact"
+                  className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:scale-105 transition duration-300 shadow-lg"
+                >
+                  Hire Me
+                </a>
+
+                <a
+                  href="#projects"
+                  className="px-8 py-3 rounded-full border border-slate-400 dark:border-slate-600 font-semibold hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-300"
+                >
+                  View Projects
+                </a>
+              </div>
             </div>
           </div>
-
           {/* Download Resume Circle - Top on mobile, right on desktop */}
-          <div className="flex flex-col md:flex-row items-center md:items-center gap-2 order-1 md:order-2 md:pl-48">
+          <div className="flex flex-col md:flex-row items-center justify-center order-1 md:order-2">
+            {" "}
             <a
-              href="/assets/Emran Hasan Rifat resume 2026.pdf"
+              href="/assets/Resume.Imran0.2.pdf"
               download
-              className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 relative flex items-center justify-center cursor-pointer rounded-full transition-all hover:scale-110 hover:-translate-y-2 duration-300 group"
+              className="w-36 h-36 sm:w-44 sm:h-44 lg:w-56 lg:h-56 relative flex items-center justify-center cursor-pointer rounded-full transition-all hover:scale-110 hover:-translate-y-2 duration-300 group"
             >
               <div className="relative w-36 h-36 sm:w-42 sm:h-42 lg:w-48 lg:h-48">
                 {/* Spinning Text */}
@@ -120,8 +172,9 @@ export default function Hero() {
                     </textPath>
                   </text>
                 </svg>
+
                 {/* Center Arrow Icon */}
-                <div className="absolute inset-0 flex items-center justify-center">
+                {/* <div className="absolute inset-0 flex items-center justify-center">
                   <svg
                     className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 dark:text-white text-black animate-pulse group-hover:animate-bounce drop-shadow-xl"
                     fill="none"
@@ -135,18 +188,35 @@ export default function Hero() {
                       d="M13 7l5 5m0 0l-5 5m5-5H6"
                     />
                   </svg>
+                </div> */}
+
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 animate-pulse group-hover:bg-blue-600 transition-colors duration-300">
+                    <svg
+                      className="w-8 h-8 text-black dark:text-white group-hover:text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </a>
-
             {/* Social Media Icons - Vertical on right side */}
-            <div className="flex md:flex-col gap-6 items-center justify-center">
+            <div className="flex flex-row md:flex-col gap-2 md:gap-3 items-center justify-center mt-2 md:mt-0">
               {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/in/emran-rifat/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border dark:border-white border-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(59,130,246,0.5)] md:ml-[-20px]"
+                className="w-9 h-9 md:w-12 md:h-12 flex items-center justify-center  rounded-full border dark:border-white border-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(59,130,246,0.5)] md:ml-[-20px]"
               >
                 <svg
                   className="w-6 h-6"
@@ -162,7 +232,7 @@ export default function Hero() {
                 href="https://github.com/EmranRifat"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-gray-700 hover:to-gray-900 dark:hover:from-white dark:hover:to-gray-100 hover:text-white dark:hover:text-slate-900 hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(75,85,99,0.5)] md:ml-12"
+                className="w-9 h-9 md:w-12 md:h-12 flex items-center justify-center  rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-gray-700 hover:to-gray-900 dark:hover:from-white dark:hover:to-gray-100 hover:text-white dark:hover:text-slate-900 hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(75,85,99,0.5)] md:ml-12"
               >
                 <svg
                   className="w-6 h-6"
@@ -178,7 +248,7 @@ export default function Hero() {
                 href="https://www.facebook.com/emranhasan.rifat.7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(59,130,246,0.5)] md:ml-20"
+                className="w-9 h-9 md:w-12 md:h-12 flex items-center justify-center  rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(59,130,246,0.5)] md:ml-20"
               >
                 <svg
                   className="w-6 h-6"
@@ -194,7 +264,7 @@ export default function Hero() {
                 href="https://www.instagram.com/emran_hasan_rifat/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(219,39,119,0.5)] md:ml-12"
+                className="w-9 h-9 md:w-12 md:h-12 flex items-center justify-center  rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(219,39,119,0.5)] md:ml-12"
               >
                 <svg
                   className="w-6 h-6"
@@ -208,7 +278,7 @@ export default function Hero() {
               {/* Email */}
               <a
                 href="mailto:emranrifat.dev@gmail.com"
-                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(147,51,234,0.5)] md:ml-[-20px] cursor-pointer"
+                className="w-9 h-9 md:w-12 md:h-12 flex items-center justify-center  rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(147,51,234,0.5)] md:ml-[-20px] cursor-pointer"
               >
                 <svg
                   className="w-6 h-6"
@@ -227,6 +297,59 @@ export default function Hero() {
             </div>
           </div>
         </div>
+
+        {/* Statistics - Below Resume Circle */}
+        {/* <div className="flex flex-row flex-wrap justify-center gap-6 mt-8 md:ml-12">
+          <div className="text-center">
+            <h3 className="text-3xl font-bold text-blue-600">3+</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              Years Experience
+            </p>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-3xl font-bold text-blue-600">40+</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              Projects
+            </p>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-3xl font-bold text-blue-600">15+</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              Technologies
+            </p>
+          </div>
+        </div> */}
+        {/* Statistics - Below Resume Circle */}
+<div className="flex flex-wrap justify-center gap-3 mt-4">
+  <div className="text-center px-3 py-2 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
+    <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
+      3+
+    </h3>
+    <p className="text-[11px] text-slate-500 dark:text-slate-400">
+      Years Experience
+    </p>
+  </div>
+
+  <div className="text-center px-3 py-2 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
+    <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
+      40+
+    </h3>
+    <p className="text-[11px] text-slate-500 dark:text-slate-400">
+      Projects
+    </p>
+  </div>
+
+  <div className="text-center px-3 py-2 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
+    <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
+      15+
+    </h3>
+    <p className="text-[11px] text-slate-500 dark:text-slate-400">
+      Technologies
+    </p>
+  </div>
+</div>
       </div>
     </section>
   );
