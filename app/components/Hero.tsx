@@ -174,21 +174,6 @@ export default function Hero() {
                 </svg>
 
                 {/* Center Arrow Icon */}
-                {/* <div className="absolute inset-0 flex items-center justify-center">
-                  <svg
-                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 dark:text-white text-black animate-pulse group-hover:animate-bounce drop-shadow-xl"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
-                </div> */}
 
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 animate-pulse group-hover:bg-blue-600 transition-colors duration-300">
@@ -299,57 +284,34 @@ export default function Hero() {
         </div>
 
         {/* Statistics - Below Resume Circle */}
-        {/* <div className="flex flex-row flex-wrap justify-center gap-6 mt-8 md:ml-12">
-          <div className="text-center">
-            <h3 className="text-3xl font-bold text-blue-600">3+</h3>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
+        <div className="flex flex-wrap justify-center gap-3 mt-4">
+          <div className="text-center px-3 py-2 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
+            <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
+              3+
+            </h3>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400">
               Years Experience
             </p>
           </div>
 
-          <div className="text-center">
-            <h3 className="text-3xl font-bold text-blue-600">40+</h3>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
+          <div className="text-center px-3 py-2 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
+            <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
+              40+
+            </h3>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400">
               Projects
             </p>
           </div>
 
-          <div className="text-center">
-            <h3 className="text-3xl font-bold text-blue-600">15+</h3>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
+          <div className="text-center px-3 py-2 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
+            <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
+              15+
+            </h3>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400">
               Technologies
             </p>
           </div>
-        </div> */}
-        {/* Statistics - Below Resume Circle */}
-<div className="flex flex-wrap justify-center gap-3 mt-4">
-  <div className="text-center px-3 py-2 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
-    <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
-      3+
-    </h3>
-    <p className="text-[11px] text-slate-500 dark:text-slate-400">
-      Years Experience
-    </p>
-  </div>
-
-  <div className="text-center px-3 py-2 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
-    <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
-      40+
-    </h3>
-    <p className="text-[11px] text-slate-500 dark:text-slate-400">
-      Projects
-    </p>
-  </div>
-
-  <div className="text-center px-3 py-2 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
-    <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
-      15+
-    </h3>
-    <p className="text-[11px] text-slate-500 dark:text-slate-400">
-      Technologies
-    </p>
-  </div>
-</div>
+        </div>
       </div>
     </section>
   );
