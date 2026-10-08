@@ -42,7 +42,7 @@ export const projects: Project[] = [
       "JWT",
     ],
     tagColor: "blue",
-    liveDemo: "https://homely-stay-frontend.vercel.app/",
+    liveDemo: "https://homely-stay-frontend-8ej2.vercel.app/",
     github: {
       client: "https://github.com/EmranRifat/Homely-Stay-Frontend",
       server: "https://github.com/EmranRifat/Go-fiber-api",
