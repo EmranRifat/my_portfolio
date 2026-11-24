@@ -2,8 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { projects } from "@/data/project_data";
-import { Button } from "@heroui/react";
+import { projects, Project } from "@/data/project_data";
 
 export default function Projects() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("list");
@@ -54,22 +53,85 @@ export default function Projects() {
     return colorMap[color] || colorMap.blue;
   };
 
+  const renderProjectLinks = (project: Project, showArrow = false) => {
+    const linkClass = `${getLinkColorClasses(project.tagColor)} hover:underline font-medium text-sm sm:text-base`;
+    const suffix = showArrow ? " →" : "";
+    const isExternal = (url: string) => url.startsWith("http");
+
+    return (
+      <div className="flex flex-wrap gap-x-4 gap-y-2">
+        <a
+          href={project.liveDemo}
+          target={isExternal(project.liveDemo) ? "_blank" : undefined}
+          rel={isExternal(project.liveDemo) ? "noopener noreferrer" : undefined}
+          className={linkClass}
+        >
+          Live Demo{suffix}
+        </a>
+
+        {typeof project.github === "string" ? (
+          <a
+            href={project.github}
+            target={isExternal(project.github) ? "_blank" : undefined}
+            rel={isExternal(project.github) ? "noopener noreferrer" : undefined}
+            className={linkClass}
+          >
+            GitHub{suffix}
+          </a>
+        ) : (
+          <>
+            <a
+              href={project.github.client}
+              target={isExternal(project.github.client) ? "_blank" : undefined}
+              rel={
+                isExternal(project.github.client)
+                  ? "noopener noreferrer"
+                  : undefined
+              }
+              className={linkClass}
+            >
+              GitHub (Client){suffix}
+            </a>
+            {project.github.server && (
+              <a
+                href={project.github.server}
+                target={
+                  isExternal(project.github.server) ? "_blank" : undefined
+                }
+                rel={
+                  isExternal(project.github.server)
+                    ? "noopener noreferrer"
+                    : undefined
+                }
+                className={linkClass}
+              >
+                GitHub (Server){suffix}
+              </a>
+            )}
+          </>
+        )}
+      </div>
+    );
+  };
+
   return (
     <section
       id="projects"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-200 dark:bg-slate-900"
+      className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-200 dark:bg-slate-900"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row justify-between items-center mb-12">
-          <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-0">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white text-center sm:text-left">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
               Featured Projects
             </span>
           </h2>
-          <div className="flex gap-2 bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
+          <div className="flex gap-2 bg-slate-100 dark:bg-slate-800 rounded-lg p-1 shrink-0">
             <button
               onClick={() => setViewMode("grid")}
-              className={`px-4 py-2 rounded-md transition ${
+              aria-label="Grid view"
+              type="button"
+              className={`px-3.5 sm:px-4 py-2 rounded-md transition ${
                 viewMode === "grid"
                   ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow"
                   : "text-slate-600 dark:text-slate-400"
@@ -91,7 +153,9 @@ export default function Projects() {
             </button>
             <button
               onClick={() => setViewMode("list")}
-              className={`px-4 py-2 rounded-md transition ${
+              aria-label="List view"
+              type="button"
+              className={`px-3.5 sm:px-4 py-2 rounded-md transition ${
                 viewMode === "list"
                   ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow"
                   : "text-slate-600 dark:text-slate-400"
@@ -115,41 +179,42 @@ export default function Projects() {
         </div>
 
         {viewMode === "grid" ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {displayedProjects.map((project) => (
               <div
                 key={project.id}
-                className="bg-slate-50 dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border-2 border-transparent hover:border-blue-500 dark:hover:border-purple-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] dark:hover:shadow-[0_0_30px_rgba(168,85,247,0.5)]"
+                className="flex flex-col bg-slate-50 dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1.5 md:hover:scale-[1.02] border-2 border-transparent hover:border-blue-500 dark:hover:border-purple-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.35)] dark:hover:shadow-[0_0_30px_rgba(168,85,247,0.35)]"
               >
-                <div className="h-48 overflow-hidden bg-slate-200 dark:bg-slate-700">
+                <div className="h-48 overflow-hidden bg-slate-200 dark:bg-slate-700 shrink-0">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover hover:scale-110 transition duration-300"
+                    className="w-full h-full object-cover hover:scale-105 transition duration-300"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+                <div className="p-5 sm:p-6 flex flex-col flex-grow">
+                  <h3 className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4">
+                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
                     {project.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className={`px-3 py-1 ${getTagColorClasses(project.tagColor)} rounded-full text-sm`}
+                        className={`px-2.5 sm:px-3 py-1 ${getTagColorClasses(project.tagColor)} rounded-full text-xs sm:text-sm`}
                       >
-                        {tag}
+                        {tag.trim()}
                       </span>
                     ))}
                   </div>
 
                   {project.credentials && (
-                    <div className="mb-4 p-2 bg-slate-200 dark:bg-slate-700 rounded text-xs">
+                    <div className="mb-4 p-2.5 bg-slate-200 dark:bg-slate-700 rounded text-xs">
                       <button
                         onClick={() => toggleCredentials(project.id)}
+                        type="button"
                         className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition font-medium"
                       >
                         {visibleCredentials[project.id]
@@ -157,102 +222,74 @@ export default function Projects() {
                           : "🔓 Show Credentials"}
                       </button>
                       {visibleCredentials[project.id] && (
-                        <div className="mt-2 text-slate-600 dark:text-slate-400">
+                        <div className="mt-2 text-slate-600 dark:text-slate-300 break-all">
                           <p>{project.credentials.number}</p>
                           <p>{project.credentials.password}</p>
                         </div>
                       )}
                     </div>
                   )}
-                  <div className="flex gap-4">
-                    <a
-                      href={project.liveDemo}
-                      className={`${getLinkColorClasses(project.tagColor)} hover:underline`}
-                    >
-                      Live Demo
-                    </a>
-                    <a
-                      href={project.github}
-                      className={`${getLinkColorClasses(project.tagColor)} hover:underline`}
-                    >
-                      GitHub
-                    </a>
 
-                    {/* <Button
-                      color="primary"
-                      variant="flat"
-                      className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200"
-                    >
-                      Explore Project
-                    </Button> */}
+                  <div className="mt-auto pt-2">
+                    {renderProjectLinks(project, false)}
                   </div>
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-5 sm:space-y-6">
             {displayedProjects.map((project) => (
               <div
                 key={project.id}
-                className="bg-slate-50 dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col md:flex-row gap-6 transform hover:-translate-y-1 hover:scale-[1.02] border-2 border-transparent hover:border-blue-500 dark:hover:border-purple-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] dark:hover:shadow-[0_0_30px_rgba(168,85,247,0.5)]"
+                className="bg-slate-50 dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-4 sm:p-6 flex flex-col md:flex-row gap-5 sm:gap-6 transform hover:-translate-y-1 md:hover:scale-[1.01] border-2 border-transparent hover:border-blue-500 dark:hover:border-purple-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.35)] dark:hover:shadow-[0_0_30px_rgba(168,85,247,0.35)]"
               >
-                <div className="w-full md:w-48 h-32 md:h-auto shrink-0 rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-700">
+                <div className="w-full md:w-56 lg:w-64 h-48 sm:h-56 md:h-auto shrink-0 rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-700">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover hover:scale-110 transition duration-300"
+                    className="w-full h-full object-cover hover:scale-105 transition duration-300"
                   />
                 </div>
-                <div className="grow">
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className={`px-3 py-1 ${getTagColorClasses(project.tagColor)} rounded-full text-sm`}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  {project.credentials && (
-                    <div className="mb-4 p-2 bg-slate-200 dark:bg-slate-700 rounded text-xs">
-                      <button
-                        onClick={() => toggleCredentials(project.id)}
-                        className="text-slate-700 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400 transition font-medium"
-                      >
-                        {visibleCredentials[project.id]
-                          ? "🔒 Hide Credentials"
-                          : "🔓 Show Credentials"}
-                      </button>
-                      {visibleCredentials[project.id] && (
-                        <div className="mt-2 text-slate-600 dark:text-slate-400">
-                          <p>{project.credentials.number}</p>
-                          <p>{project.credentials.password}</p>
-                        </div>
-                      )}
+                <div className="grow min-w-0 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
+                      {project.tags.map((tag, index) => (
+                        <span
+                          key={index}
+                          className={`px-2.5 sm:px-3 py-1 ${getTagColorClasses(project.tagColor)} rounded-full text-xs sm:text-sm`}
+                        >
+                          {tag.trim()}
+                        </span>
+                      ))}
                     </div>
-                  )}
-                  <div className="flex gap-4">
-                    <a
-                      href={project.liveDemo}
-                      className={`${getLinkColorClasses(project.tagColor)} hover:underline font-medium`}
-                    >
-                      Live Demo →
-                    </a>
-                    <a
-                      href={project.github}
-                      className={`${getLinkColorClasses(project.tagColor)} hover:underline font-medium`}
-                    >
-                      GitHub →
-                    </a>
+                    {project.credentials && (
+                      <div className="mb-4 p-2.5 bg-slate-200 dark:bg-slate-700 rounded text-xs">
+                        <button
+                          onClick={() => toggleCredentials(project.id)}
+                          type="button"
+                          className="text-slate-700 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400 transition font-medium"
+                        >
+                          {visibleCredentials[project.id]
+                            ? "🔒 Hide Credentials"
+                            : "🔓 Show Credentials"}
+                        </button>
+                        {visibleCredentials[project.id] && (
+                          <div className="mt-2 text-slate-600 dark:text-slate-300 break-all">
+                            <p>{project.credentials.number}</p>
+                            <p>{project.credentials.password}</p>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
+                  {renderProjectLinks(project, true)}
                 </div>
               </div>
             ))}
@@ -260,10 +297,11 @@ export default function Projects() {
         )}
 
         {projects.length > 3 && (
-          <div className="mt-12 text-center">
+          <div className="mt-10 sm:mt-12 text-center">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              type="button"
+              className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
               {showAll ? "Show Less" : "View All Projects"}
             </button>

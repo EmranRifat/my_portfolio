@@ -14,7 +14,7 @@ import GetinTouch from "./components/GetinTouch";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 text-foreground">
+    <main className="min-h-screen overflow-x-clip bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 text-foreground">
       <Navigation />
       <Hero />
       <About />

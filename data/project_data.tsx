@@ -1,5 +1,3 @@
-import { number } from "framer-motion";
-
 export interface Project {
   id: number;
   title: string;
@@ -20,10 +18,12 @@ export interface Project {
     password: string;
   };
   liveDemo: string;
-  github: {
-    client: string;
-    server?: string;
-  };
+  github:
+    | string
+    | {
+        client: string;
+        server?: string;
+      };
 }
 
 export const projects: Project[] = [

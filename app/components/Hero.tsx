@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 
@@ -34,126 +33,53 @@ export default function Hero() {
     <section
       id="home"
       className="
-    pt-32 pb-20 px-4 sm:px-6 lg:px-8 
-    relative overflow-hidden
-    bg-gradient-to-br 
-    from-slate-100 
-    via-white 
-    to-slate-200
-    dark:from-black
-    dark:via-black
-    dark:to-slate-900
-    transition-colors
-    duration-500
-  "
+        pt-24 pb-14 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20
+        px-4 sm:px-6 lg:px-8
+        relative overflow-hidden
+        bg-gradient-to-br
+        from-slate-100 via-white to-slate-200
+        dark:from-black dark:via-black dark:to-slate-900
+        transition-colors duration-500
+      "
     >
       {/* Background Image with Opacity */}
       <div
-        className=" absolute inset-0 bg-no-repeat bg-contain bg-left opacity-20 dark:opacity-1 transition-opacity duration-500 "
+        className="absolute inset-0 bg-no-repeat bg-cover sm:bg-contain bg-center md:bg-left opacity-15 dark:opacity-10 pointer-events-none transition-opacity duration-500"
         style={{
           backgroundImage: "url('/assets/images/formal-black.png')",
         }}
       />
 
-      <div className="max-w-8xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-24 items-center justify-center">
-          {" "}
-          {/* Content on the top for mobile, left for desktop */}
-          <div className="relative md:translate-x-48 lg:translate-x-72">
-            {" "}
-            <div className="text-center md:text-left order-2 md:order-1 flex flex-col justify-center items-center md:items-start">
-              <div className="mb-4">
-                <span className="font-mono text-sm md:text-base text-blue-600 dark:text-blue-400">
-                  &lt;Hello World /&gt;
-                </span>
-              </div>
-              <h1 className="text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-                <span className="text-2xl sm:text-3xl"> Hi, I&apos;m </span>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                  Emran Hasan Rifat
-                </span>
-              </h1>
-              <p className="text-lg sm:text-2xl text-slate-600 dark:text-slate-300 mb-2">
-                <span
-                  ref={typedElement}
-                  className="typing text-[#aa1244] dark:text-red-500 font-semibold"
-                ></span>
-              </p>
-              <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 mb-4 flex items-center justify-center md:justify-start gap-2">
-                <span className="text-blue-600 dark:text-blue-400 text-sm">
-                  📍
-                </span>{" "}
-                Dhaka, Bangladesh
-              </p>
-              <p className="mt-2 w-full max-w-4xl text-base sm:text-lg leading-7 sm:leading-8 text-slate-600 dark:text-slate-300">
-                I specialize in designing, developing, and maintaining scalable
-                web applications using{" "}
-                <span className="font-semibold text-blue-600 dark:text-blue-400">
-                  modern frontend and backend technologies
-                </span>{" "}
-                with AI-assisted workflows to build efficient, high-quality
-                software.
-              </p>
-              {/* Tech Stack */}
-              <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-2 max-w-xs sm:max-w-none mx-auto md:mx-0">
-                {[
-                  "React",
-                  "Next.js",
-                  "TypeScript",
-                  "Go",
-                  "Node.js",
-                  "Django",
-                  "PostgreSQL",
-                ].map((tech) => (
-                  <span
-                    key={tech}
-                    className="whitespace-nowrap px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs font-medium hover:bg-blue-600 hover:text-white transition"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              {/* <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <a
-                href="#contact"
-                className="relative overflow-visible px-12 py-3 shadow-sm bg-gradient-to-r from-blue-600 to-purple-600 after:content-[''] after:absolute after:rounded-full after:inset-0 after:bg-background/40 after:z-[-1] after:transition after:duration-700 hover:after:scale-150 hover:after:opacity-0 text-white rounded-full hover:from-blue-700 hover:to-purple-700 transition font-medium"
-              >
-                Get In Touch
-              </a>
-              <a
-                href="#projects"
-                className="relative overflow-visible px-12 py-3 shadow-sm bg-slate-200 dark:bg-slate-800 after:content-[''] after:absolute after:rounded-full after:inset-0 after:bg-background/40 after:z-[-1] after:transition after:duration-700 hover:after:scale-150 hover:after:opacity-0 text-slate-900 dark:text-white rounded-full hover:bg-slate-300 dark:hover:bg-slate-700 transition font-medium"
-              >
-                View Projects
-              </a>
-            </div> */}
-              {/* Buttons */}
-              <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-6">
-                <a
-                  href="#contact"
-                  className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:scale-105 transition duration-300 shadow-lg"
-                >
-                  Hire Me
-                </a>
-
-                <a
-                  href="#projects"
-                  className="px-8 py-3 rounded-full border border-slate-400 dark:border-slate-600 font-semibold hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-300"
-                >
-                  View Projects
-                </a>
-              </div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-[auto_1fr] gap-y-6 md:gap-y-0 md:gap-x-8 lg:gap-x-12">
+          {/* Greeting & Name - Always at top */}
+          <div className="md:col-span-7 md:col-start-1 md:row-start-1 text-center md:text-left flex flex-col items-center md:items-start">
+            <div className="mb-3 sm:mb-4">
+              <span className="font-mono text-xs sm:text-sm md:text-base text-blue-600 dark:text-blue-400">
+                &lt;Hello World /&gt;
+              </span>
             </div>
+
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white md:mb-4 leading-tight">
+              <span className="text-xl sm:text-3xl lg:text-4xl font-semibold">
+                Hi, I&apos;m{" "}
+              </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                Emran Hasan Rifat
+              </span>
+            </h1>
           </div>
-          {/* Download Resume Circle - Top on mobile, right on desktop */}
-          <div className="flex flex-col md:flex-row items-center justify-center order-1 md:order-2">
-            {" "}
+
+
+          {/* Download Resume Circle & Social Icons - Right below name on mobile, right column on tablet/desktop */}
+          <div className="md:col-span-5 md:col-start-8 md:row-start-1 md:row-span-2 self-center flex flex-col md:flex-row items-center justify-center gap-5 md:gap-3 lg:gap-5">
             <a
               href="/assets/Resume.Imran0.2.pdf"
               download
-              className="w-36 h-36 sm:w-44 sm:h-44 lg:w-56 lg:h-56 relative flex items-center justify-center cursor-pointer rounded-full transition-all hover:scale-110 hover:-translate-y-2 duration-300 group"
+              aria-label="Download Resume"
+              className="w-40 h-40 sm:w-44 sm:h-44 lg:w-52 lg:h-52 relative flex items-center justify-center shrink-0 cursor-pointer rounded-full transition-all hover:scale-105 hover:-translate-y-1 duration-300 group"
             >
-              <div className="relative w-36 h-36 sm:w-42 sm:h-42 lg:w-48 lg:h-48">
+              <div className="relative w-full h-full">
                 {/* Spinning Text */}
                 <svg
                   className="absolute inset-0 w-full h-full animate-spin group-hover:animate-none transition-all"
@@ -166,19 +92,18 @@ export default function Hero() {
                       d="M 112, 112 m -85, 0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0"
                     />
                   </defs>
-                  <text className="text-base sm:text-lg lg:text-xl font-semibold dark:fill-white fill-black tracking-widest drop-shadow-lg">
+                  <text className="text-[15px] sm:text-base lg:text-lg font-semibold dark:fill-white fill-black tracking-widest drop-shadow-lg">
                     <textPath href="#circlePath" startOffset="0%">
-                      ➡️ DOWNLOAD RESUME FROM HERE ➡️DOWNLOAD RESUME FROM HERE
+                      ➡️ DOWNLOAD RESUME FROM HERE ➡️ DOWNLOAD RESUME FROM HERE
                     </textPath>
                   </text>
                 </svg>
 
                 {/* Center Arrow Icon */}
-
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 animate-pulse group-hover:bg-blue-600 transition-colors duration-300">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/30 dark:bg-white/20 animate-pulse group-hover:bg-blue-600 transition-colors duration-300">
                     <svg
-                      className="w-8 h-8 text-black dark:text-white group-hover:text-white"
+                      className="w-7 h-7 sm:w-8 sm:h-8 text-black dark:text-white group-hover:text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -194,17 +119,19 @@ export default function Hero() {
                 </div>
               </div>
             </a>
-            {/* Social Media Icons - Vertical on right side */}
-            <div className="flex flex-row md:flex-col gap-2 md:gap-3 items-center justify-center mt-2 md:mt-0">
+
+            {/* Social Media Icons - Row on mobile, curved arc on tablet/desktop */}
+            <div className="flex flex-row md:flex-col gap-3 items-center justify-center flex-wrap">
               {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/in/emran-rifat/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 md:w-12 md:h-12 flex items-center justify-center  rounded-full border dark:border-white border-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(59,130,246,0.5)] md:ml-[-20px]"
+                aria-label="LinkedIn"
+                className="w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center rounded-full border dark:border-white border-gray-700 text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_6px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_20px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_30px_rgba(59,130,246,0.5)] md:-ml-2 lg:-ml-3"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -217,10 +144,11 @@ export default function Hero() {
                 href="https://github.com/EmranRifat"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 md:w-12 md:h-12 flex items-center justify-center  rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-gray-700 hover:to-gray-900 dark:hover:from-white dark:hover:to-gray-100 hover:text-white dark:hover:text-slate-900 hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(75,85,99,0.5)] md:ml-12"
+                aria-label="GitHub"
+                className="w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-gray-700 hover:to-gray-900 dark:hover:from-white dark:hover:to-gray-100 hover:text-white dark:hover:text-slate-900 hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_6px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_20px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_30px_rgba(75,85,99,0.5)] md:ml-3 lg:ml-5"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -233,10 +161,11 @@ export default function Hero() {
                 href="https://www.facebook.com/emranhasan.rifat.7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 md:w-12 md:h-12 flex items-center justify-center  rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(59,130,246,0.5)] md:ml-20"
+                aria-label="Facebook"
+                className="w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_6px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_20px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_30px_rgba(59,130,246,0.5)] md:ml-6 lg:ml-9"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -249,10 +178,11 @@ export default function Hero() {
                 href="https://www.instagram.com/emran_hasan_rifat/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 md:w-12 md:h-12 flex items-center justify-center  rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(219,39,119,0.5)] md:ml-12"
+                aria-label="Instagram"
+                className="w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_6px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_20px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_30px_rgba(219,39,119,0.5)] md:ml-3 lg:ml-5"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -263,10 +193,11 @@ export default function Hero() {
               {/* Email */}
               <a
                 href="mailto:emranrifat.dev@gmail.com"
-                className="w-9 h-9 md:w-12 md:h-12 flex items-center justify-center  rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_8px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_30px_rgba(147,51,234,0.5)] md:ml-[-20px] cursor-pointer"
+                aria-label="Email"
+                className="w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center rounded-full border border-gray-700 dark:border-white text-gray-700 dark:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent transition-all hover:scale-110 hover:rotate-6 shadow-[0_6px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_20px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_30px_rgba(147,51,234,0.5)] md:-ml-2 lg:-ml-3 cursor-pointer"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -281,33 +212,97 @@ export default function Hero() {
               </a>
             </div>
           </div>
+
+          {/* Role, Location, Bio, Tech Stack & Buttons */}
+          <div className="md:col-span-7 md:col-start-1 md:row-start-2 text-center md:text-left flex flex-col items-center md:items-start">
+            <p className="text-base sm:text-xl lg:text-2xl text-slate-600 dark:text-slate-300 mb-2 min-h-[2.75rem] sm:min-h-[2.25rem] flex items-center justify-center md:justify-start">
+              <span
+                ref={typedElement}
+                className="typing text-[#aa1244] dark:text-red-500 font-semibold"
+              ></span>
+            </p>
+
+            <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 mb-4 flex items-center justify-center md:justify-start gap-1.5">
+              <span className="text-blue-600 dark:text-blue-400 text-sm">
+                📍
+              </span>
+              <span>Dhaka, Bangladesh</span>
+            </p>
+
+            <p className="mt-1 w-full max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+              I specialize in designing, developing, and maintaining scalable
+              web applications using{" "}
+              <span className="font-semibold text-blue-600 dark:text-blue-400">
+                modern frontend and backend technologies
+              </span>{" "}
+              with AI-assisted workflows to build efficient, high-quality
+              software.
+            </p>
+
+            {/* Tech Stack */}
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-5 max-w-lg md:max-w-none">
+              {[
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Go",
+                "Node.js",
+                "Django",
+                "PostgreSQL",
+              ].map((tech) => (
+                <span
+                  key={tech}
+                  className="whitespace-nowrap px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row w-full sm:w-auto items-center justify-center md:justify-start gap-3 sm:gap-4 mt-7">
+              <a
+                href="#contact"
+                className="w-full sm:w-auto text-center px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:scale-105 transition duration-300 shadow-lg"
+              >
+                Hire Me
+              </a>
+
+              <a
+                href="#projects"
+                className="w-full sm:w-auto text-center px-8 py-3 rounded-full border border-slate-400 dark:border-slate-600 text-slate-800 dark:text-slate-100 font-semibold hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-300"
+              >
+                View Projects
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Statistics - Below Resume Circle */}
-        <div className="flex flex-wrap justify-center gap-3 mt-4">
-          <div className="text-center px-3 py-2 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
-            <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
+        {/* Statistics */}
+        <div className="grid grid-cols-3 gap-2.5 sm:gap-4 max-w-md sm:max-w-lg mx-auto mt-10 lg:mt-12">
+          <div className="text-center px-2 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-white/60 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 backdrop-blur-sm">
+            <h3 className="text-lg sm:text-2xl font-bold text-blue-600 dark:text-blue-400">
               3+
             </h3>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400">
+            <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
               Years Experience
             </p>
           </div>
 
-          <div className="text-center px-3 py-2 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
-            <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
+          <div className="text-center px-2 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-white/60 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 backdrop-blur-sm">
+            <h3 className="text-lg sm:text-2xl font-bold text-blue-600 dark:text-blue-400">
               40+
             </h3>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400">
+            <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
               Projects
             </p>
           </div>
 
-          <div className="text-center px-3 py-2 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
-            <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
+          <div className="text-center px-2 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-white/60 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 backdrop-blur-sm">
+            <h3 className="text-lg sm:text-2xl font-bold text-blue-600 dark:text-blue-400">
               15+
             </h3>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400">
+            <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
               Technologies
             </p>
           </div>

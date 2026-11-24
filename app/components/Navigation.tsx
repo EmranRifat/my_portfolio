@@ -3,6 +3,15 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
+const NAV_ITEMS = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
+];
+
 export default function Navigation() {
   const [mounted, setMounted] = useState(false);
   const [currentTime, setCurrentTime] = useState("");
@@ -13,7 +22,6 @@ export default function Navigation() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
 
-    // Update time every second
     const updateTime = () => {
       const now = new Date();
       const timeString = now.toLocaleTimeString("en-US", {
@@ -25,150 +33,95 @@ export default function Navigation() {
       setCurrentTime(timeString);
     };
 
-    updateTime(); // Initial call
+    updateTime();
     const interval = setInterval(updateTime, 1000);
 
     return () => clearInterval(interval);
   }, []);
 
-  if (!mounted) {
-    return (
-      <nav className="fixed top-0 w-full bg-white/70 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <a
-              href="#home"
-              className="font-mono text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
-            >
-              &lt; RIFAT /&gt;
-            </a>
-
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-7">
-              {[
-                "Home",
-                "About",
-                "Skills",
-                "Projects",
-                "Experience",
-                "Contact",
-              ].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="
-              relative text-sm font-medium
-              text-slate-700 dark:text-slate-300
-              hover:text-blue-600 dark:hover:text-blue-400
-              transition-all duration-300
-              group
-            "
-                >
-                  {item}
-
-                  <span
-                    className="
-                absolute left-0 -bottom-1
-                w-0 h-0.5
-                bg-blue-600
-                transition-all duration-300
-                group-hover:w-full
-              "
-                  />
-                </a>
-              ))}
-
-              {/* Time */}
-              <div
-                className="
-            text-xs font-mono
-            text-slate-600 dark:text-slate-400
-            bg-slate-100/80 dark:bg-slate-800/80
-            px-3 py-2
-            rounded-xl
-            border border-slate-200 dark:border-slate-700
-            shadow-sm
-          "
-              >
-                {currentTime}
-              </div>
-            </div>
-
-            {/* Mobile button placeholder */}
-            <button className="md:hidden text-slate-700 dark:text-white text-xl">
-              ☰
-            </button>
-          </div>
-        </div>
-      </nav>
-    );
-  }
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  const isDark = theme === "dark";
+  const isDark = mounted ? theme === "dark" : true;
 
   return (
-    <nav className="fixed top-0 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-sm z-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed top-0 left-0 right-0 w-full bg-white/85 dark:bg-slate-950/85 backdrop-blur-xl border-b border-slate-200/60 dark:border-slate-800/60 shadow-sm z-50">
+      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 gap-2">
           {/* Mobile menu button - Left side */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="md:hidden flex items-center shrink-0">
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+              className="p-2 rounded-lg bg-slate-200/80 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"
               aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
               type="button"
             >
               {mobileMenuOpen ? (
                 <svg
-                  className="w-6 h-6 text-slate-900 dark:text-white"
-                  fill="currentColor"
+                  className="w-5 h-5 text-slate-900 dark:text-white"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path
                     d="M6 18L18 6M6 6l12 12"
-                    stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    fill="none"
                   />
                 </svg>
               ) : (
                 <svg
-                  className="w-6 h-6 text-slate-900 dark:text-white"
-                  fill="currentColor"
+                  className="w-5 h-5 text-slate-900 dark:text-white"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <circle cx="12" cy="6" r="1.5" />
-                  <circle cx="12" cy="12" r="1.5" />
-                  <circle cx="12" cy="18" r="1.5" />
+                  <path
+                    d="M4 6h16M4 12h16M4 18h16"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               )}
             </button>
           </div>
 
-          <div className="md:flex-none">
+          {/* Logo */}
+          <div className="shrink-0">
             <a
               href="#home"
-              className="font-mono text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
+              onClick={() => setMobileMenuOpen(false)}
+              className="font-mono text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent hover:opacity-90 transition-opacity"
             >
               &lt; RIFAT /&gt;
             </a>
           </div>
 
-          {/* Mobile right side buttons */}
-          <div className="md:hidden flex items-center gap-2">
-            <div className="text-xs font-mono text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">
-              {currentTime}
-            </div>
+          {/* Mobile right side controls */}
+          <div className="md:hidden flex items-center gap-1.5 sm:gap-2 shrink-0">
+            {currentTime && (
+              <div className="hidden min-[420px]:block text-[11px] sm:text-xs font-mono whitespace-nowrap text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-md border border-slate-200/70 dark:border-slate-700/70">
+                {currentTime}
+              </div>
+            )}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"
+              disabled={!mounted}
+              className="p-2 rounded-lg bg-slate-200/80 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"
               aria-label="Toggle theme"
               type="button"
             >
@@ -204,60 +157,33 @@ export default function Navigation() {
             </button>
           </div>
 
-          {/* Desktop menu */}
-          <div className="hidden md:flex space-x-8 items-center">
-            <a
-              href="#home"
-              className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-            >
-              About
-            </a>
-            <a
-              href="#skills"
-              className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-            >
-              Skills
-            </a>
-            <a
-              href="#projects"
-              className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-            >
-              Projects
-            </a>
-            <a
-              href="#experience"
-              className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-            >
-              Experience
-            </a>
-            <a
-              href="#contact"
-              className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-            >
-              Contact
-            </a>
+          {/* Desktop & Tablet menu */}
+          <div className="hidden md:flex items-center md:gap-4 lg:gap-7">
+            {NAV_ITEMS.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="relative text-sm lg:text-base font-medium whitespace-nowrap text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
+              >
+                {item.label}
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300 group-hover:w-full" />
+              </a>
+            ))}
 
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"
+              disabled={!mounted}
+              className="p-2 rounded-lg bg-slate-200/80 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors shrink-0"
               aria-label="Toggle theme"
               type="button"
             >
               {isDark ? (
-                // Sun icon for light mode
                 <svg
                   className="w-5 h-5 text-yellow-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
                     strokeLinecap="round"
@@ -267,13 +193,11 @@ export default function Navigation() {
                   />
                 </svg>
               ) : (
-                // Moon icon for dark mode
                 <svg
                   className="w-5 h-5 text-slate-700"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
                     strokeLinecap="round"
@@ -285,58 +209,35 @@ export default function Navigation() {
               )}
             </button>
 
-            <div className="text-sm font-mono text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg">
-              {currentTime}
-            </div>
+            {currentTime && (
+              <div className="text-xs lg:text-sm font-mono whitespace-nowrap text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2.5 lg:px-3 py-1.5 rounded-lg border border-slate-200/70 dark:border-slate-700/70 shrink-0">
+                {currentTime}
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile dropdown menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden pb-4">
-            <div className="flex flex-col space-y-2">
-              <a
-                href="#home"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition py-2"
-              >
-                Home
-              </a>
-              <a
-                href="#about"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition py-2"
-              >
-                About
-              </a>
-              <a
-                href="#skills"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition py-2"
-              >
-                Skills
-              </a>
-              <a
-                href="#projects"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition py-2"
-              >
-                Projects
-              </a>
-              <a
-                href="#experience"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition py-2"
-              >
-                Experience
-              </a>
-              <a
-                href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition py-2"
-              >
-                Contact
-              </a>
+          <div className="md:hidden border-t border-slate-200/70 dark:border-slate-800/70 py-3">
+            <div className="flex flex-col space-y-1">
+              {NAV_ITEMS.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  {item.label}
+                </a>
+              ))}
+              {currentTime && (
+                <div className="min-[420px]:hidden pt-2 mt-1 border-t border-slate-200/60 dark:border-slate-800/60 px-3">
+                  <span className="inline-block text-xs font-mono text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-md">
+                    {currentTime}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         )}
